@@ -2,7 +2,7 @@
 # Java 1.7 & Maven Dockerfile
 #
 
-# Build using
+# Build (or rebuild) using
 # docker build -t="jeffdavisco/tomcat-maven:latest" .
 
 # pull base image.
@@ -23,10 +23,14 @@ RUN  \
 VOLUME /volume/git
 
 # create working directory
-RUN mkdir -p /local/git && git clone https://github.com/dajevu/docker-maven-tomcat && chmod +x /usr/local/bin/run.sh
+RUN mkdir -p /local/git 
+WORKDIR /local/git/
+
+# Install the test webapp
+RUN git clone https://github.com/dajevu/docker-maven-tomcat
 WORKDIR /local/git/docker-maven-tomcat
 
-# run terminal
-#CMD "/bin/bash" "mvn jetty:run"
+RUN chmod +x /local/git/docker-maven-tomcat/run.sh
+# run startup script
 
-CMD ["run.sh"]
+#CMD ["run.sh"]
