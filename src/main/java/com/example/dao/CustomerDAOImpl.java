@@ -50,4 +50,5 @@ public class CustomerDAOImpl implements CustomerDAO {
     public List<Customer> getAllCustomers() {
         return this.mongoOps.findAll(Customer.class, CUSTOMERS_COLLECTION);
     }
+    
 }
