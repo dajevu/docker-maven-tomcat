@@ -27,7 +27,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	</filter>
 	<filter-mapping>
 		<filter-name>cross-origin</filter-name>
-		<url-pattern>/cometd/*</url-pattern>
+		<url-pattern>/service/*</url-pattern>
 	</filter-mapping>
 
  
