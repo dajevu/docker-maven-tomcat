@@ -3,7 +3,6 @@ package com.example.controller;
 import com.example.dao.CustomerDAO;
 import com.example.dao.CustomerDAOImpl;
 import com.example.model.Customer;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
