@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -52,7 +53,9 @@ public class Customer {
     @JsonProperty("PostalCode")
     private String PostalCode;
     @JsonProperty("Country")
+    @Field("country")
     private String Country;
+    private String countryLc;
     @JsonProperty("Phone")
     private String Phone;
     @JsonProperty("Fax")
@@ -204,20 +207,20 @@ public class Customer {
         this.PostalCode = PostalCode;
     }
 
-    /**
-     * @return The Country
-     */
-    @JsonProperty("Country")
     public String getCountry() {
         return Country;
     }
 
-    /**
-     * @param Country The Country
-     */
-    @JsonProperty("Country")
-    public void setCountry(String Country) {
-        this.Country = Country;
+    public void setCountry(String country) {
+        Country = country;
+    }
+
+    public String getCountryLc() {
+        return Country;
+    }
+
+    public void setCountryLc(String countryLc) {
+        this.Country = countryLc;
     }
 
     /**

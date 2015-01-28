@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("WEB-INF/mvc-dispatcher-servlet.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("mvc-dispatcher-servlet.xml");
 
         CustomerDAO customerDao = ctx.getBean("customerDao", CustomerDAO.class);
 
