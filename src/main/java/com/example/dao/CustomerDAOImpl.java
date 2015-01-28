@@ -48,7 +48,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public List<Customer> getAllCustomers() {
-        return this.mongoOps.findAll(Customer.class, CUSTOMERS_COLLECTION);
+        Query query = new Query(Criteria.where("Country").is("USA"));
+        return this.mongoOps.find(query, Customer.class, CUSTOMERS_COLLECTION);
     }
 
 }
