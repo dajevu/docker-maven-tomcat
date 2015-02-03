@@ -1,0 +1,25 @@
+<html>
+
+<head>
+<script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+</head>
+<script>
+  $( document ).ready(function() {
+    $.ajax({
+        url: 'http://192.168.59.103:8080/service/customer/',
+        type: 'GET',
+        success: function(data) {
+          alert(data);
+        },
+        error: function(e) {
+        //called when there is an error
+        //console.log(e.message);
+        }
+      });
+  });
+  
+</script>
+
+<body>Test
+</body>
+</html>

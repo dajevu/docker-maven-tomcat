@@ -24,15 +24,15 @@
 
     <mongo:db-factory dbname="Northwind" mongo-ref="mongo" id="mongoDbFactory" />
 
-    <!--
     <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
         <property name="host" value="#{systemProperties['MONGODB_PORT_27017_TCP_ADDR']}"/>
     </bean>
-    -->
 
+    <!--
     <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
         <property name="host" value="192.168.59.103"/>
     </bean>
+    -->
 
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <constructor-arg name="mongo" ref="mongo" />
