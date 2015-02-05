@@ -21,8 +21,6 @@ public class RestSpringController {
     @Autowired
     CustomerDAO customerService;
 
-    private String host;
-
     @RequestMapping(method = RequestMethod.GET, headers="Accept=application/json")
     public List<Customer> getAllCustomers() {
 
@@ -38,11 +36,4 @@ public class RestSpringController {
         this.customerService = customerService;
     }
 
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
 }
