@@ -24,7 +24,6 @@ public class RestSpringController {
     @RequestMapping(method = RequestMethod.GET, headers="Accept=application/json")
     public List<Customer> getAllCustomers() {
 
-        System.out.println("************* Host: " + host);
         return customerService.getAllCustomers();
     }
 
