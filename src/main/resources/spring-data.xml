@@ -43,4 +43,8 @@
         <constructor-arg name="mongoOps" ref="mongoTemplate"/>
     </bean>
 
+    <bean id="controller" class="com.example.controller.RestSpringController">
+        <property name="host" value="#{systemProperties['MONGODB_PORT_27017_TCP_ADDR']}"/>
+    </bean>
+
 </beans>

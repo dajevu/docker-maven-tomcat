@@ -21,17 +21,12 @@ public class RestSpringController {
     @Autowired
     CustomerDAO customerService;
 
-    /*
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET,headers="Accept=application/json")
-    public BIConversion.User getUser(@PathVariable int id) {
-        BIConversion.User user=userService.getUserById(id);
-        return user;
-    }
-    */
+    private String host;
 
     @RequestMapping(method = RequestMethod.GET, headers="Accept=application/json")
     public List<Customer> getAllCustomers() {
-        System.out.println("HERE!!!!");
+
+        System.out.println("************* Host: " + host);
         return customerService.getAllCustomers();
     }
 
@@ -41,5 +36,13 @@ public class RestSpringController {
 
     public void setCustomerService(CustomerDAO customerService) {
         this.customerService = customerService;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
     }
 }
