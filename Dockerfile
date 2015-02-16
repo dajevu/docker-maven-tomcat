@@ -36,3 +36,5 @@ RUN chmod +x /local/git/docker-maven-tomcat/run.sh
 # run startup script
 
 #CMD ["run.sh"]
+
+EXPOSE 8080
